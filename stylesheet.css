@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent-color: #00ffff;
+    --secondary-accent: #ff00ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+}
+
+#logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+#hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 0;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#coming-soon {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.marquee {
+    display: flex;
+    width: 200%;
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.cta-button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+}
+
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: 'LVGDL';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: var(--bg-color);
+    color: var(--accent-color);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 red;
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -1px 0 blue;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-effect {
+    0% {
+        clip: rect(44px, 9999px, 56px, 0);
+    }
+    5% {
+        clip: rect(32px, 9999px, 94px, 0);
+    }
+    10% {
+        clip: rect(54px, 9999px, 100px, 0);
+    }
+    15% {
+        clip: rect(20px, 9999px, 72px, 0);
+    }
+    20% {
+        clip: rect(60px, 9999px, 23px, 0);
+    }
+    25% {
+        clip: rect(14px, 9999px, 97px, 0);
+    }
+    30% {
+        clip: rect(16px, 9999px, 19px, 0);
+    }
+    35% {
+        clip: rect(89px, 9999px, 46px, 0);
+    }
+    40% {
+        clip: rect(4px, 9999px, 92px, 0);
+    }
+    45% {
+        clip: rect(67px, 9999px, 11px, 0);
+    }
+    50% {
+        clip: rect(79px, 9999px, 84px, 0);
+    }
+    55% {
+        clip: rect(12px, 9999px, 86px, 0);
+    }
+    60% {
+        clip: rect(28px, 9999px, 57px, 0);
+    }
+    65% {
+        clip: rect(98px, 9999px, 8px, 0);
+    }
+    70% {
+        clip: rect(37px, 9999px, 53px, 0);
+    }
+    75% {
+        clip: rect(71px, 9999px, 69px, 0);
+    }
+    80% {
+        clip: rect(83px, 9999px, 43px, 0);
+    }
+    85% {
+        clip: rect(50px, 9999px, 64px, 0);
+    }
+    90% {
+        clip: rect(25px, 9999px, 35px, 0);
+    }
+    95% {
+        clip: rect(76px, 9999px, 99px, 0);
+    }
+    100% {
+        clip: rect(5px, 9999px, 88px, 0);
+    }
+}
